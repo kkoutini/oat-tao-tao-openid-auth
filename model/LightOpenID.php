@@ -537,7 +537,7 @@ class LightOpenID
      */
     function discover($url)
     {
-        if (!$url) throw new ErrorException('No identity supplied.');
+        if (!$url) throw new \ErrorException('No identity supplied.');
         # Use xri.net proxy to resolve i-name identities
         if (!preg_match('#^https?:#', $url)) {
             $url = "https://xri.net/$url";
@@ -669,9 +669,9 @@ class LightOpenID
                 return $server;
             }
 
-            throw new ErrorException("No OpenID Server found at $url", 404);
+            throw new \ErrorException("No OpenID Server found at $url", 404);
         }
-        throw new ErrorException('Endless redirection!', 500);
+        throw new \ErrorException('Endless redirection!', 500);
     }
     
     protected function is_allowed_type($content_type) {

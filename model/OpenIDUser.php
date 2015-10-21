@@ -63,6 +63,13 @@ class OpenIDUser extends \common_user_User
                 break;
             case PROPERTY_USER_ROLES:
                 return array("http://www.tao.lu/Ontologies/TAOItem.rdf#TestAuthor","http://www.tao.lu/Ontologies/TAOItem.rdf#ItemAuthor");
+            case "http://www.tao.lu/Ontologies/TAO.rdf#FirstTimeInTao":
+
+
+                return array("http://www.tao.lu/Ontologies/generis.rdf#False");
+            case "http://www.tao.lu/Ontologies/TAO.rdf#LastExtensionUsed":
+                return array("tao/Main/index?structure=items&ext=taoItems");
+
             default:
                 return $this->getUserResource()->getPropertyValues(new \core_kernel_classes_Property($property));
         }
