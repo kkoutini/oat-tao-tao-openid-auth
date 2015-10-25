@@ -36,8 +36,7 @@ class OpenIDLogin extends \tao_actions_CommonModule
         try {
             # Change 'localhost' to your domain name.
             $openid = new LightOpenID('http://e-learning-22/');
-            //TODO move to config
-            $openid_identfier="http://e-learning-22:8080/Sayegh-OpenID-Provider/auth";
+            $openid_identfier="http://192.168.0.201:8080/Sayegh-OpenID-Provider/auth";
             if(!$openid->mode) {
                 if(isset($openid_identfier)) {
                     $openid->identity = $openid_identfier;
